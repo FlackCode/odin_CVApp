@@ -23,10 +23,10 @@ export default function Info({ info, setInfo }) {
                     <h1 className="font-bold text-xl text-gray-800">Personal Info</h1>
                 </div>
                 <div className='w-6 h-6'>
-                    <img src={PointerArrow} className={`transform ${isRotated ? 'rotate-90' : ''} transition-all duration-200 ease-linear`}/>
+                    <img src={PointerArrow} className={`transform ${isRotated ? 'rotate-90' : ''} transition-all duration-100 ease-linear`}/>
                 </div>
             </button>
-            <div className={`py-2 flex flex-col gap-4 transition-all duration-200 ease-out opacity-100 ${isCollapsed ? 'h-0 overflow-hidden py-0 opacity-0' : ''}`}>
+            <div className={`py-2 flex flex-col gap-4 transition-all duration-200 ease-out ${isCollapsed ? 'h-0 overflow-hidden py-0 hidden ' : ''}`}>
                 <div className='w-full flex flex-row justify-between px-4'>
                     <div className='w-5/12 bg-gray-200 py-2 px-4 rounded-xl'>
                         <label htmlFor="fullName" className='font-bold'>Full Name</label>
