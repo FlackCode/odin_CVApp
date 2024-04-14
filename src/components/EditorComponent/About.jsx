@@ -34,6 +34,7 @@ export default function About({ about = {}, setAbout, isOpen, toggle }) {
                         onChange={(e) => handleChange(e, 'about')} 
                         placeholder='Write something about yourself' 
                         className='bg-gray-200 outline-none resize-y'
+                        autoComplete="off"
                     />
                 </div>
             </div>

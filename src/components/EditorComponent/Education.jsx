@@ -36,24 +36,24 @@ export default function Education({ educationList, setEducationList, isOpen, tog
             <div className={`py-2 flex flex-col gap-4 transition-all duration-200 ease-out ${isOpen ? '' : 'h-0 overflow-hidden py-0 hidden '}`}>
                 <div className='w-full flex flex-col py-2 px-4 rounded-xl bg-gray-200'>
                     <label htmlFor="educationType" className='font-bold'>Educational Establishment:</label>
-                    <input type="text" name="educationType" placeholder='Enter educational establishment type' className='bg-gray-200 outline-none'/>
+                    <input type="text" name="educationType" autoComplete="off" placeholder='Enter educational establishment type' className='bg-gray-200 outline-none'/>
                 </div>
                 <div className='w-full flex flex-col py-2 px-4 rounded-xl bg-gray-200'>
                     <label htmlFor="schoolName" className='font-bold'>Name:</label>
-                    <input type="text" name="schoolName" placeholder='Enter name here' className='bg-gray-200 outline-none'/>
+                    <input type="text" name="schoolName" autoComplete="off" placeholder='Enter name here' className='bg-gray-200 outline-none'/>
                 </div>
                 <div className='w-full flex flex-col py-2 px-4 rounded-xl bg-gray-200'>
                     <label htmlFor="schoolDesc" className='font-bold'>Description:</label>
-                    <input type="text" name="schoolDesc" placeholder='Write a short description' className='bg-gray-200 outline-none'/>
+                    <input type="text" name="schoolDesc" autoComplete="off" placeholder='Write a short description' className='bg-gray-200 outline-none'/>
                 </div>
                 <div className='w-full flex flex-row justify-between'>
                     <div className='w-5/12 bg-gray-200 py-2 px-4 rounded-xl'>
                         <label htmlFor="yearStart" className='font-bold'>Year Started:</label>
-                        <input type="number" name="yearStart" placeholder='Enter start year' className='bg-gray-200 outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'/>
+                        <input type="number" name="yearStart" autoComplete="off" placeholder='Enter start year' className='bg-gray-200 outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'/>
                     </div>
                     <div className='w-5/12 bg-gray-200 py-2 px-4 rounded-xl'>
                         <label htmlFor="yearEnd" className='font-bold'>Year Ended:</label>
-                        <input type="text" name="yearEnd" placeholder='Enter end year' className='bg-gray-200 outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'/>
+                        <input type="text" name="yearEnd" autoComplete="off" placeholder='Enter end year' className='bg-gray-200 outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'/>
                     </div>
                 </div>
                 <button className='bg-gray-200 py-2 rounded-xl font-bold border-black border-2 shadow-md

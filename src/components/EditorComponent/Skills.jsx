@@ -31,7 +31,7 @@ export default function Skills({ skillList, setSkillList, isOpen, toggle }) {
             <div className={`py-2 flex flex-col gap-4 transition-all duration-200 ease-out ${isOpen ? '' : 'h-0 overflow-hidden py-0 hidden '}`}>
                 <div className='w-full flex flex-col py-2 px-4 rounded-xl bg-gray-200'>
                     <label htmlFor="skill" className='font-bold'>Skills:</label>
-                    <input type="text" name="skill" placeholder='Write one of your skills' className='bg-gray-200 outline-none'/>
+                    <input type="text" name="skill" autoComplete="off" placeholder='Write one of your skills' className='bg-gray-200 outline-none'/>
                 </div>
                 <button className='bg-gray-200 py-2 rounded-xl font-bold border-black border-2 shadow-md
                                     hover:cursor-pointer hover:bg-white transition-all duration-200' onClick={handleAddSkill}>Add Skill</button>
