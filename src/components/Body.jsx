@@ -11,11 +11,13 @@ export default function Body() {
         location: '',
     });
     const [educationList, setEducationList] = useState([]);
-
+    const [about, setAbout] = useState({
+        about: '',
+    })
     return (
         <div className="flex flex-row flex-grow p-4">
-            <TemplateEditor info={info} setInfo={setInfo} educationList={educationList} setEducationList={setEducationList}/>
-            <Template info={info} educationList={educationList}/>
+            <TemplateEditor info={info} setInfo={setInfo} educationList={educationList} setEducationList={setEducationList} about={about} setAbout={setAbout}/>
+            <Template info={info} educationList={educationList} about={about}/>
         </div>
     );
 }

@@ -2,7 +2,7 @@ import LocationIcon from './EditorComponent/icons/location.svg'
 import JobIcon from './EditorComponent/icons/briefcase.svg'
 import EmailIcon from './EditorComponent/icons/email.svg'
 import PhoneIcon from './EditorComponent/icons/phone.svg'
-export default function Template({ info: { fullName, job, email, phone, location }, educationList }) {
+export default function Template({ info: { fullName, job, email, phone, location }, educationList, about:{ about } }) {
     return(
         <div className="w-1/2 h-full px-32 py-6 bg-gray-200 ">
             <div className="bg-white h-full p-8 flex flex-col">
@@ -31,11 +31,10 @@ export default function Template({ info: { fullName, job, email, phone, location
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-row justify-between py-6 items-center">
+                <div className="flex flex-row justify-between py-8 ">
                     <div className='w-2/4 px-2 border-r-2 flex flex-col'>
-                        
                         {educationList.map((education, index) => (
-                            <div key={index} className='py-2 text-sm'>
+                            <div key={index} className='text-sm'>
                                 <h1 className='font-bold text-xl'>{education.educationType}</h1>
                                 <p>Name: {education.schoolName}</p>
                                 <p>Description: {education.schoolDesc}</p>
@@ -43,8 +42,9 @@ export default function Template({ info: { fullName, job, email, phone, location
                             </div>
                         ))}
                     </div>
-                    <div className='w-2/4 px-2'>
-                        <h1 className='font-bold text-xl'></h1>
+                    <div className='w-2/4 px-2 '>
+                        {about && <h1 className='font-bold text-xl'>About</h1>}
+                        <p>{about}</p>
                     </div>
                 </div>
             </div>

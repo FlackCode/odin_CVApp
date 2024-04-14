@@ -1,15 +1,15 @@
 import SchoolIcon from './icons/school.svg'
 import PointerArrow from './icons/pointdown.svg'
-import { useState } from 'react'
-export default function Education({ educationList, setEducationList }) {
-
+import { useState, useEffect } from 'react'
+export default function Education({ educationList, setEducationList, isOpen, toggle }) {
     const [isRotated, setIsRotated] = useState(true)
-    const [isCollapsed, setIsColapsed] = useState(true)
-
+    useEffect(() => {
+        setIsRotated(isOpen);
+    }, [isOpen]);
     const handleButtonClick = () => {
       setIsRotated(!isRotated)
-      setIsColapsed(!isCollapsed)
-    };
+      toggle()
+    }
 
     const handleAddSchool = () => {
         const newEducation = {
@@ -18,9 +18,9 @@ export default function Education({ educationList, setEducationList }) {
             schoolDesc: document.getElementsByName('schoolDesc')[0].value,
             yearStart: document.getElementsByName('yearStart')[0].value,
             yearEnd: document.getElementsByName('yearEnd')[0].value,
-        };
-        setEducationList([...educationList, newEducation]);
-    };
+        }
+        setEducationList([...educationList, newEducation])
+    }
 
     return(
         <div className="bg-white rounded-2xl p-4 shadow-inner drop-shadow-xl">
@@ -33,7 +33,7 @@ export default function Education({ educationList, setEducationList }) {
                     <img src={PointerArrow} className={`transform ${isRotated ? 'rotate-90' : ''} transition-all duration-100 ease-linear`}/>
                 </div>
             </button>
-            <div className={`py-2 flex flex-col gap-4 transition-all duration-200 ease-out ${isCollapsed ? 'h-0 overflow-hidden py-0 hidden ' : ''}`}>
+            <div className={`py-2 flex flex-col gap-4 transition-all duration-200 ease-out ${isOpen ? '' : 'h-0 overflow-hidden py-0 hidden '}`}>
                 <div className='w-full flex flex-col py-2 px-4 rounded-xl bg-gray-200'>
                     <label htmlFor="educationType" className='font-bold'>Educational Establishment:</label>
                     <input type="text" name="educationType" placeholder='Enter educational establishment type' className='bg-gray-200 outline-none'/>
