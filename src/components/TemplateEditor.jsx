@@ -3,8 +3,9 @@ import About from "./EditorComponent/About"
 import Education from "./EditorComponent/Education"
 import Info from "./EditorComponent/Info"
 import Skills from "./EditorComponent/Skills"
+import Experience from "./EditorComponent/Experience"
 
-export default function TemplateEditor({ info, setInfo, educationList, setEducationList, about, setAbout, skillList, setSkillList }) {
+export default function TemplateEditor({ info, setInfo, educationList, setEducationList, about, setAbout, skillList, setSkillList, experienceList, setExperienceList }) {
     const [openComponent, setOpenComponent] = useState(null);
 
     const toggleComponent = (component) => {
@@ -19,6 +20,7 @@ export default function TemplateEditor({ info, setInfo, educationList, setEducat
                 <Education educationList={educationList} setEducationList={setEducationList} isOpen={openComponent === "education"} toggle={() => toggleComponent("education")}/>
                 <About about={about} setAbout={setAbout} isOpen={openComponent === "about"} toggle={() => toggleComponent("about")}/>
                 <Skills skillList={skillList} setSkillList={setSkillList} isOpen={openComponent === "skills"} toggle={() => toggleComponent("skills")}/>
+                <Experience experienceList={experienceList} setExperienceList={setExperienceList} isOpen={openComponent === "experience"} toggle={() => toggleComponent("experience")}/>
             </div>
         </div>
     )

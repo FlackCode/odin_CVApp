@@ -2,7 +2,7 @@ import LocationIcon from './EditorComponent/icons/location.svg'
 import JobIcon from './EditorComponent/icons/briefcase.svg'
 import EmailIcon from './EditorComponent/icons/email.svg'
 import PhoneIcon from './EditorComponent/icons/phone.svg'
-export default function Template({ info: { fullName, job, email, phone, location }, educationList, about:{ about }, skillList }) {
+export default function Template({ info: { fullName, job, email, phone, location }, educationList, about:{ about }, skillList, experienceList }) {
     return(
         <div className="w-1/2 h-full px-32 py-6 bg-gray-200 ">
             <div className="bg-white h-full p-8 flex flex-col">
@@ -51,7 +51,7 @@ export default function Template({ info: { fullName, job, email, phone, location
                     </div>
                 </div>
                 <div className="flex flex-row justify-between py-8 ">
-                    <div className='w-2/4 px-2 border-r-2 flex flex-col'>
+                    <div className='w-2/4 px-2 border-r-2 flex flex-col justify-between'>
                         {skillList.map((skill, index) => (
                             <div key={index} className='text-base flex flex-row items-center gap-4'>
                                 {skill && <h1 className='font-bold text-base'>Skill:</h1>}
@@ -60,7 +60,16 @@ export default function Template({ info: { fullName, job, email, phone, location
                         ))}
                     </div>
                     <div className='w-2/4 px-2 '>
-                        
+                        {experienceList.map((experience, index) => (
+                            <div key={index} className='text-sm mb-2'>
+                                <div className='flex flex-row justify-between items-center'>
+                                    <h1 className='font-bold text-lg'>{experience.name}</h1>
+                                    <p className='text-gray-500'>{experience.yearStart} - {experience.yearEnd}</p>
+                                </div>
+                                <p>Location: {experience.location}</p>
+                                <p>Description: {experience.description}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

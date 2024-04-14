@@ -12,13 +12,14 @@ export default function Body() {
     });
     const [educationList, setEducationList] = useState([])
     const [skillList, setSkillList] = useState([])
+    const [experienceList, setExperienceList] = useState([])
     const [about, setAbout] = useState({
         about: '',
     })
     return (
         <div className="flex flex-row flex-grow p-4">
-            <TemplateEditor info={info} setInfo={setInfo} educationList={educationList} setEducationList={setEducationList} about={about} setAbout={setAbout} skillList={skillList} setSkillList={setSkillList}/>
-            <Template info={info} educationList={educationList} about={about} skillList={skillList}/>
+            <TemplateEditor info={info} setInfo={setInfo} educationList={educationList} setEducationList={setEducationList} about={about} setAbout={setAbout} skillList={skillList} setSkillList={setSkillList} experienceList={experienceList} setExperienceList={setExperienceList}/>
+            <Template info={info} educationList={educationList} about={about} skillList={skillList} experienceList={experienceList}/>
         </div>
     );
 }
