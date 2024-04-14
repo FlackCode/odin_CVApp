@@ -2,8 +2,7 @@ import LocationIcon from './EditorComponent/icons/location.svg'
 import JobIcon from './EditorComponent/icons/briefcase.svg'
 import EmailIcon from './EditorComponent/icons/email.svg'
 import PhoneIcon from './EditorComponent/icons/phone.svg'
-export default function Template({ info }) {
-    const { fullName, job, email, phone, location } = info; 
+export default function Template({ info: { fullName, job, email, phone, location }, educationList }) {
     return(
         <div className="w-1/2 h-full px-32 py-6 bg-gray-200 ">
             <div className="bg-white h-full p-8 flex flex-col">
@@ -30,6 +29,22 @@ export default function Template({ info }) {
                             {phone && <img src={PhoneIcon} alt="Location Icon" className="w-4 h-4" />}
                             <p>{phone}</p>
                         </div>
+                    </div>
+                </div>
+                <div className="flex flex-row justify-between py-6 items-center">
+                    <div className='w-2/4 px-2 border-r-2 flex flex-col'>
+                        
+                        {educationList.map((education, index) => (
+                            <div key={index} className='py-2 text-sm'>
+                                <h1 className='font-bold text-xl'>{education.educationType}</h1>
+                                <p>Name: {education.schoolName}</p>
+                                <p>Description: {education.schoolDesc}</p>
+                                <p>{education.yearStart} - {education.yearEnd}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className='w-2/4 px-2'>
+                        <h1 className='font-bold text-xl'></h1>
                     </div>
                 </div>
             </div>

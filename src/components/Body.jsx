@@ -10,12 +10,12 @@ export default function Body() {
         phone: '',
         location: '',
     });
-
+    const [educationList, setEducationList] = useState([]);
 
     return (
         <div className="flex flex-row flex-grow p-4">
-            <TemplateEditor info={info} setInfo={setInfo} />
-            <Template info={info} />
+            <TemplateEditor info={info} setInfo={setInfo} educationList={educationList} setEducationList={setEducationList}/>
+            <Template info={info} educationList={educationList}/>
         </div>
     );
 }
